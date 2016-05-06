@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Adiona Contato</title>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="js/jquery/jquery-ui.css">
+
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery/jquery-ui.js"></script>
+<script src="js/jquery/external/jquery/jquery.js"></script>
+
+<script>
+    $("#dataNascimento").datepicker({dateFormat: 'dd/mm/yyyy'});
+</script>
+
+
+</head>
+<body>
+	<form role="form" action="adicionaContato" method="GET">
+		<div class="container">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<center>Cadastro</center>
+				</div>
+				<div class="panel-body">
+					<div class="form-group">
+						<label for="nome">Nome:</label> <input type="text"
+							class="form-control" name="nome">
+					</div>
+					<div class="form-group">
+						<label for="email">E_Mail:</label> <input type="email"
+							class="form-control" name="email">
+					</div>
+					<div class="form-group">
+						<label for="endereco">Endereço:</label> <input type="text"
+							class="form-control" name="endereco">
+					</div>
+					<div class="form-group">
+						<label for="dataNascimento">Data de Nascimento:</label>
+						<input type="date"
+							class="form-control" name="dataNascimento">
+						
+<!-- 						<tags:campoData id="dataNascimento" /> -->
+
+					</div>
+					<button type="submit" class="btn btn-primary">Gravar</button>
+					<button type="button" class="btn btn-primary"
+						onclick="window.location.href='index.jsp';">Cancelar</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
