@@ -30,8 +30,7 @@
 		contato = contatoDao.buscaContato(Long.parseLong(id));
 	%>
 
-	<form action="alteraContatoServlet?id=<%=contato.getId()%>"
-		method="POST">
+        <form action="mvc?logica=AlterarContatoLogica&id=<%=id%>" method="POST">
 		<div class="container">
 			<div class="panel panel-primary">
 				<div class="panel-heading" align="center">Alterar</div>
@@ -65,7 +64,7 @@
 					</div>
 					<button type="submit" class="btn btn-primary">Alterar</button>
 					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='index.jsp';">Cancelar</button>
+                                                onclick="window.location.href='mvc?logica=ListarContatosLogica';">Cancelar</button>
 				</div>
 			</div>
 		</div>

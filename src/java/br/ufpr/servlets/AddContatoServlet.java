@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.ufpr.dao.ContatoDao;
 import br.ufpr.modelo.Contato;
+import javax.servlet.RequestDispatcher;
 
 /**
  * Servlet implementation class AddContatoServlet
@@ -36,25 +37,12 @@ public class AddContatoServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String nome = request.getParameter("nome");
-		String email = request.getParameter("email");
-		String endereco = request.getParameter("endereco");
-		String dataNascimentoTXT = request.getParameter("dataNascimento");
-		Calendar dataNascimento = Calendar.getInstance();
-		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-		try {
-			dataNascimento.setTime(format.parse(dataNascimentoTXT));
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			
-			e.printStackTrace();
-			throw new RuntimeException();
-		}
-		ContatoDao contatoDao = new ContatoDao();
-		Contato contato = new Contato(nome, email, endereco, dataNascimento);
-		contatoDao.adiciona(contato);
 		
-		response.sendRedirect("index.jsp");
+		
+                RequestDispatcher rd  = request.getRequestDispatcher("/contatoAdicionado.jsp");
+                rd.forward(request, response);
+                
+		//response.sendRedirect("index.jsp");
 		
 	}
 

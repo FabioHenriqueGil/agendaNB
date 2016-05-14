@@ -123,9 +123,22 @@ public class ContatoDao {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("erro no adiciona contato");
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
 
 	}
+
+    public void deleta(Contato contato) {
+        String sql = "delete from contato where id=" + contato.getId();
+		try {
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.execute();
+			stmt.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("erro no deletar Contato contato");
+			throw new RuntimeException(e);
+		}
+    }
 }

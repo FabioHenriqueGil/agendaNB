@@ -19,7 +19,7 @@
         <div class="container" align="center">
             <c:import url="cabecalho.jsp" />
         </div>
-        <form role="form" action="adicionaContato" method="GET">
+        <form role="form" action="mvc?logica=AdicionarContatoLogica" method="POST">
             <div class="container">
                 <div class="panel panel-primary">
                     <div class="panel-heading" align="center">Cadastro</div>
@@ -43,7 +43,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Gravar</button>
                         <button type="button" class="btn btn-primary"
-                                onclick="window.location.href = 'index.jsp';">Cancelar</button>
+                                onclick="window.location.href = 'mvc?logica=ListarContatosLogica';">Cancelar</button>
                     </div>
                 </div>
             </div>

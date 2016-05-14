@@ -30,9 +30,14 @@ public class alteraContatoServlet extends HttpServlet {
 	}
 
 	/**
+     * @param request
+     * @param response
+     * @throws javax.servlet.ServletException
+     * @throws java.io.IOException
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+        @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Long id = Long.parseLong(request.getParameter("id"));
@@ -45,9 +50,6 @@ public class alteraContatoServlet extends HttpServlet {
 		try {
 			dataNascimento.setTime(format.parse(dataNascimentoTXT));
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-
-			e.printStackTrace();
 			throw new RuntimeException();
 		}
 		ContatoDao contatoDao = new ContatoDao();
@@ -59,9 +61,14 @@ public class alteraContatoServlet extends HttpServlet {
 	}
 
 	/**
+     * @param request
+     * @param response
+     * @throws javax.servlet.ServletException
+     * @throws java.io.IOException
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+        @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
