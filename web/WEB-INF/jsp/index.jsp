@@ -63,7 +63,7 @@
                                     <td><button class="btn btn-primary"
                                                 onclick="window.location.href = 'mvc?logica=AlterarContatoFormLogica&id=${contato.id}';">
                                             Alterar</button></td>
-                                    <td><button  class="btn btn-danger"
+                                    <td><button   class="btn btn-danger"
                                                 onclick="deleta(${contato.id})">
                                             Deletar</button>
                                         <script>
